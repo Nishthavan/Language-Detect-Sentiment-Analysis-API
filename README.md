@@ -1,4 +1,4 @@
-## USC MOLA LAB CHALLANEGE API CODE - Language-Detect-Sentiment-Analysis-API
+## USC MOLA LAB CHALLANEGE API CODE - Language Detection & Sentiment Analysi API
 ### At first request the API can be a bit slow (Free Tier) to respond but subsequent request will be fast.
 
 ## API Endpoints: 

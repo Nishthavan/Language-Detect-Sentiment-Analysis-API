@@ -2,12 +2,12 @@
 ### At first request the API can be a bit slow (Free Tier) to respond but subsequent request will be fast.
 
 ## API Endpoints: 
-#### 1 Sentiment Score - http://34.217.11.13:8080/api/sentiment-score
-#### 2 Language Detection - http://34.217.11.13:8080/api/language-detection
+#### Sentiment Score - http://34.217.11.13:8080/api/sentiment-score
+#### Language Detection - http://34.217.11.13:8080/api/language-detection
 
 ## Code & Response Examples:
 
-### **Sentiment Score**
+### *Sentiment Score*
 
 ```javascript
 var axios = require('axios');
@@ -55,7 +55,7 @@ axios(config)
 ]
 ```
 
-### **Language Detection**
+### *Language Detection*
 ```javascript
 var axios = require('axios');
 var data = JSON.stringify([{"tweet_text":"I am very happy today, to be honest this is the best day of my life"},{"tweet_text":"I am a bit confused and really sad"}]);

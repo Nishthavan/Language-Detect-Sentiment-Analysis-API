@@ -2,12 +2,12 @@
 ### At first request the API can be a bit slow (Free Tier) to respond but subsequent request will be fast.
 
 ## API Endpoints: 
-### 1. [GET] Sentiment Score - http://34.217.11.13:8080/api/sentiment-score
-### 2. [GET] Language Detection - http://34.217.11.13:8080/api/language-detection
+#### 1 Sentiment Score - http://34.217.11.13:8080/api/sentiment-score
+#### 2 Language Detection - http://34.217.11.13:8080/api/language-detection
 
 ## Code & Response Examples:
 
-### 1. Sentiment Score
+### **Sentiment Score**
 
 ```javascript
 var axios = require('axios');
@@ -31,7 +31,7 @@ axios(config)
 });
 
 ```
-
+### Response
 ```json
 [
     {
@@ -51,6 +51,45 @@ axios(config)
             "positive": 0.0047527034766972065
         },
         "detected_mood": "NEGATIVE"
+    }
+]
+```
+
+### **Language Detection**
+```javascript
+var axios = require('axios');
+var data = JSON.stringify([{"tweet_text":"I am very happy today, to be honest this is the best day of my life"},{"tweet_text":"I am a bit confused and really sad"}]);
+
+var config = {
+  method: 'post',
+  url: 'http://34.217.11.13:8080/api/language-detection',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+### Response
+```json
+[
+    {
+        "tweet_text": "I am very happy today, to be honest this is the best day of my life",
+        "is_english": true,
+        "detected_language": "en"
+    },
+    {
+        "tweet_text": "I am a bit confused and really sad",
+        "is_english": true,
+        "detected_language": "en"
     }
 ]
 ```
